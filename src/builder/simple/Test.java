@@ -4,10 +4,6 @@ import static builder.simple.Mariage.unMariage;
 import static builder.simple.Menu.unMenuAvec;
 import static org.junit.Assert.assertEquals;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.junit.Ignore;
 
 import builder.simple.Menu.Builder;
@@ -43,20 +39,19 @@ public class Test {
 	@org.junit.Test
 	public void mariage_complet() throws Exception {
 		Mariage mariage = unMariage()
-			.lieu(au()
-				  .adresse("par là")
-				  .nom("maison"))
-			.menu(unMenuAvec()
-					.entree("entree surprise")
-					.plat("plat suprise")
-					.dessert("dessert surprise")
-					.fromage()
-					.vin())
-			.invite("moi")
-			.invite("elle")
-			.invite("lui")
-			.invite("l'autre")
-			.build();
+							.avec("moi")
+							.avec("elle")
+							.avec("lui")
+							.avec("l'autre")
+							.lieu(aLa("maison")
+								  .situe("par là"))
+							.menu(unMenuAvec()
+									.entree("entree surprise")
+									.plat("plat suprise")
+									.dessert("dessert surprise")
+									.fromage()
+									.vin())
+							.preparer();
 
         assertEquals("Mariage [" +
         		"menu=Menu [entree=entree surprise, plat=plat suprise, dessert=dessert surprise, fromage=true, cafe=false, vin=true], " +
@@ -65,8 +60,10 @@ public class Test {
 		
 	}
 
-	protected builder.simple.Lieu.Builder au() {
-		return new Lieu.Builder();
+	protected builder.simple.Lieu.Builder aLa(String nomDuLieu) {
+		Lieu.Builder builder = new Lieu.Builder();
+		builder.nom(nomDuLieu);
+		return builder;
 	}
 
 	@org.junit.Test @Ignore //TODO faire passer le test

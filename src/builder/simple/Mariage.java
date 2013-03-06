@@ -61,11 +61,11 @@ public class Mariage {
 			return this;
 		}
 
-		public Mariage build() {
+		public Mariage preparer() {
 			return new Mariage(this);
 		}
 
-		public Builder invite(String invite) {
+		public Builder avec(String invite) {
 			invites.add(invite);
 			return this;
 		}

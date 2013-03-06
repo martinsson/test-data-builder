@@ -35,7 +35,7 @@ public class Lieu {
 			return this;
 		}
 
-		public Builder adresse(String adresse) {
+		public Builder situe(String adresse) {
 			this.adresse = adresse;
 			return this;
 		}
