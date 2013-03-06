@@ -1,7 +1,5 @@
 package builder.simple;
 
-import static builder.simple.Mariage.createMariage;
-import static builder.simple.Menu.createMenu;
 
 public class Test {
 
