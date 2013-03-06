@@ -2,7 +2,8 @@ package builder.simple;
 
 public class Lieu {
     private String nom;
-    private String adresse;
+
+	private String adresse;
 
     public String getNom() {
         return nom;
@@ -20,4 +21,8 @@ public class Lieu {
         this.adresse = adresse;
     }
 
+    @Override
+    public String toString() {
+    	return "Lieu [nom=" + nom + ", adresse=" + adresse + "]";
+    }
 }

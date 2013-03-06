@@ -31,5 +31,11 @@ public class Mariage {
         this.lieu = lieu;
     }
 
+	@Override
+	public String toString() {
+		return "Mariage [menu=" + menu + ", invites=" + invites + ", lieu="
+				+ lieu + "]";
+	}
+
 
 }

@@ -8,8 +8,6 @@ public class Menu {
     private boolean cafe;
     private boolean vin;
     
-    
-	
 	public String getEntree() {
 		return entree;
 	}
@@ -28,73 +26,30 @@ public class Menu {
 	public boolean isVin() {
 		return vin;
 	}
-	
-	public static MenuBuilder createMenu() {
-		return new MenuBuilder(new Menu());
+	public void setEntree(String entree) {
+		this.entree = entree;
+	}
+	public void setPlat(String plat) {
+		this.plat = plat;
+	}
+	public void setDessert(String dessert) {
+		this.dessert = dessert;
+	}
+	public void setFromage(boolean fromage) {
+		this.fromage = fromage;
+	}
+	public void setCafe(boolean cafe) {
+		this.cafe = cafe;
+	}
+	public void setVin(boolean vin) {
+		this.vin = vin;
+	}
+	@Override
+	public String toString() {
+		return "Menu [entree=" + entree + ", plat=" + plat + ", dessert="
+				+ dessert + ", fromage=" + fromage + ", cafe=" + cafe
+				+ ", vin=" + vin + "]";
 	}
 	
-	public static MenuBuilder createMenu(Menu menu) {
-		return new MenuBuilder(menu);
-	}
-	
-	
-
-
-
-
-	public static class MenuBuilder {
-		
-		private Menu menu;
-		
-		public MenuBuilder() {
-			this.menu = new Menu();
-		}
-
-		public MenuBuilder(Menu menu) {
-			super();
-			this.menu = menu;
-		}
-
-
-		public MenuBuilder setEntree(String entree) {
-			menu.entree = entree;
-	        return this;
-	    }
-
-
-	    public MenuBuilder setPlat(String plat) {
-	    	menu.plat = plat;
-	        return this;
-	    }
-
-
-	    public MenuBuilder setFromage(boolean fromage) {
-	    	menu.fromage = fromage;
-	        return this;
-	    }
-
-
-	    public MenuBuilder setDessert(String dessert) {
-	    	menu.dessert = dessert;
-	        return this;
-	    }
-
-	    public MenuBuilder setCafe(boolean cafe) {
-	    	menu.cafe = cafe;
-	        return this;
-	    }
-
-
-	    public MenuBuilder setVin(boolean vin) {
-	    	menu.vin = vin;
-	        return this;
-	    }
-		
-		public Menu preparerMenu() {
-			return menu;
-		}
-		
-	}
-
     
 }
