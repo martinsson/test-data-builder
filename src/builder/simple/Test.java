@@ -1,9 +1,7 @@
 package builder.simple;
 
-import java.util.HashSet;
-import static builder.simple.Menu.createMenu;
 import static builder.simple.Mariage.createMariage;
-import java.util.Set;
+import static builder.simple.Menu.createMenu;
 
 public class Test {
 
@@ -12,12 +10,9 @@ public class Test {
      */
     public static void main(String[] args) {
         // un menu :
-    	Menu menu1 = createMenu().setEntree("salade").setPlat("poisson").preparerMenu();
-    	
-    	Menu menu11 = createMenu(menu1).setCafe(true).preparerMenu();
-    	
         //Menu menu1 = new Menu();
         //menu1.setEntree("salade").setPlat("poisson");
+    	
 //    	MenuBuilder menuB = new MenuBuilder().setEntree("salade").setPlat("poisson");
 //    	Menu menu1 = menuB.preparerMenu();
 //
@@ -54,8 +49,6 @@ public class Test {
 //        mariage.setLieu(lieu);
 //        mariage.setMenu(menuMariage);
     	
-    	Mariage mariage = createMariage().au("14 rue").avec("Jeff").
-    			avecMenu(menu11).chez("lui").avec("Cunegonde").avec("Frederic").preparerMariage();
     }
 
 }
