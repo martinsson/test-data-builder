@@ -11,10 +11,8 @@ public class Test {
 
 	@org.junit.Test
 	public void gros_repas() throws Exception {
-		Menu menu = new Menu();
-		menu.setEntree("salade");
-		menu.setPlat("Filet rossini");
-		menu.setDessert("crème brûlée");
+		Menu menu = new Menu.Builder().entree("salade").plat("Filet rossini").dessert("crème brûlée").build();
+		
 		assertEquals("Menu [entree=salade, plat=Filet rossini, dessert=crème brûlée, fromage=false, cafe=false, vin=false]", menu.toString());
 	}
 	
