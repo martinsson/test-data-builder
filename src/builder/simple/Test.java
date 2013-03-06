@@ -1,5 +1,6 @@
 package builder.simple;
 
+import static builder.simple.Menu.unMenuAvec;
 import static org.junit.Assert.assertEquals;
 
 import java.util.HashSet;
@@ -7,15 +8,33 @@ import java.util.Set;
 
 import org.junit.Assert;
 
+
 public class Test {
 
 	@org.junit.Test
 	public void gros_repas() throws Exception {
-		Menu menu = new Menu.Builder().entree("salade").plat("Filet rossini").dessert("crème brûlée").build();
+		Menu menu = unMenuAvec()
+					.entree("salade")
+					.plat("Filet rossini")
+					.dessert("crème brûlée")
+					.commander();
 		
 		assertEquals("Menu [entree=salade, plat=Filet rossini, dessert=crème brûlée, fromage=false, cafe=false, vin=false]", menu.toString());
 	}
 	
+	@org.junit.Test
+	public void petit_repas_gourmand() throws Exception {
+		Menu menu = unMenuAvec()
+				.entree("salade")
+				.plat("Filet rossini")
+				.dessert("crème brûlée")
+				.vin()
+				.fromage()
+				.commander();
+		
+		assertEquals("Menu [entree=salade, plat=Filet rossini, dessert=crème brûlée, fromage=true, cafe=false, vin=true]", menu.toString());
+	}
+
 	@org.junit.Test
 	public void mariage_complet() throws Exception {
         Set<String> invites = new HashSet<String>();

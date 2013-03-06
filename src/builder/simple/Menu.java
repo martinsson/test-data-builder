@@ -63,6 +63,10 @@ public class Menu {
 				+ ", vin=" + vin + "]";
 	}
 
+	protected static Builder unMenuAvec() {
+		return new Builder();
+	}
+
 	public static class Builder {
 		private String entree;
 		private String plat;
@@ -86,22 +90,22 @@ public class Menu {
 			return this;
 		}
 
-		public Builder fromage(boolean fromage) {
-			this.fromage = fromage;
+		public Builder fromage() {
+			this.fromage = true;
 			return this;
 		}
 
-		public Builder cafe(boolean cafe) {
-			this.cafe = cafe;
+		public Builder cafe() {
+			this.cafe = true;
 			return this;
 		}
 
-		public Builder vin(boolean vin) {
-			this.vin = vin;
+		public Builder vin() {
+			this.vin = true;
 			return this;
 		}
 
-		public Menu build() {
+		public Menu commander() {
 			Menu menu = new Menu();
 			menu.setEntree(entree);
 			menu.setPlat(plat);
