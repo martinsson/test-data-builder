@@ -26,6 +26,12 @@ public class Lieu {
 		return "Lieu [nom=" + nom + ", adresse=" + adresse + "]";
 	}
 
+	protected static Builder aLa(String nomDuLieu) {
+		Builder builder = new Builder();
+		builder.nom(nomDuLieu);
+		return builder;
+	}
+
 	public static class Builder {
 		private String nom;
 		private String adresse;

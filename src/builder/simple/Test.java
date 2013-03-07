@@ -1,5 +1,6 @@
 package builder.simple;
 
+import static builder.simple.Lieu.aLa;
 import static builder.simple.Mariage.unMariage;
 import static builder.simple.Menu.unMenuAvec;
 import static org.junit.Assert.assertEquals;
@@ -55,12 +56,6 @@ public class Test {
         		"invites=[moi, lui, l'autre, elle], " +
         		"lieu=Lieu [nom=maison, adresse=par là]]", mariage.toString());
 		
-	}
-
-	protected builder.simple.Lieu.Builder aLa(String nomDuLieu) {
-		Lieu.Builder builder = new Lieu.Builder();
-		builder.nom(nomDuLieu);
-		return builder;
 	}
 
 	@org.junit.Test @Ignore //TODO faire passer le test
