@@ -39,18 +39,15 @@ public class Test {
 	@org.junit.Test
 	public void mariage_complet() throws Exception {
 		Mariage mariage = unMariage()
-							.avec("moi")
-							.avec("elle")
-							.avec("lui")
-							.avec("l'autre")
+							.avec("moi", "elle", "lui", "l'autre")
 							.lieu(aLa("maison")
 								  .situe("par là"))
-							.menu(unMenuAvec()
-									.entree("entree surprise")
-									.plat("plat suprise")
-									.dessert("dessert surprise")
-									.fromage()
-									.vin())
+							.ouLOnMange(unMenuAvec()
+										.entree("entree surprise")
+										.plat("plat suprise")
+										.dessert("dessert surprise")
+										.fromage()
+										.vin())
 							.preparer();
 
         assertEquals("Mariage [" +

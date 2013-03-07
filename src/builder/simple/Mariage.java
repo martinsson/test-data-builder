@@ -1,5 +1,8 @@
 package builder.simple;
 
+import static java.util.Arrays.asList;
+
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,7 +49,7 @@ public class Mariage {
 		private Set<String> invites = new HashSet<String>();
 		private builder.simple.Lieu.Builder lieu;
 
-		public Builder menu(builder.simple.Menu.Builder menu) {
+		public Builder ouLOnMange(builder.simple.Menu.Builder menu) {
 			this.menu = menu;
 			return this;
 		}
@@ -65,8 +68,8 @@ public class Mariage {
 			return new Mariage(this);
 		}
 
-		public Builder avec(String invite) {
-			invites.add(invite);
+		public Builder avec(String...invites) {
+			this.invites.addAll(asList(invites));
 			return this;
 		}
 	}
